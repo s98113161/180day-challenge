@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pick a color and paint the canvas</title>
+    <style type="text/css">
+    html,
+    body {
+        background-color: lightgray;
+        margin: 0;
+        height: 100%;
+    }
+    
+    #title {
+        font-size: 35px;
+        width: 100%;
+        text-align: center;
+    }
+    
+  
+    
+    #container {
+        height: 70%;
+        width: 50%;
+        margin: 0 auto;
+    }
+    
+    #color-pannel {
+        float: left;
+        height: 100%;
+        width: 25%;
+    }
+    
+    #color-pannel .colors {
+        text-align: center;
+        height: 25%;
+        border-radius: 25px;
+    }
+    
+    #red {
+        background: red;
+    }
+    
+    #blue {
+        background: blue;
+    }
+    
+    #green {
+        background: green;
+    }
+    
+    #yellow {
+        background: yellow;
+    }
+    
+    .canvas {
+        float: left;
+        height: 100%;
+        width: 75%;
+    }
+    
+    .canvas .painting {
+        float: left;
+        background: white;
+        box-sizing: border-box;
+        border: solid 1px;
+        width: 20%;
+        height: 33%;
+        border-radius: 25px;
+    }
+    
+    .clearfix {
+        clear: both;
+    }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <div id="title">
+        <p>Pick a color and paint the canvas</p>
+    </div>
+    <div id="container">
+        <div id="color-pannel">
+            <div class="colors" id="red">1</div>
+            <div class="colors" id="blue">2</div>
+            <div class="colors" id="green">3</div>
+            <div class="colors" id="yellow">4</div>
+        </div>
+        <div class="canvas">
+            <div class="painting"></div>
+            <div class="painting"></div>
+            <div class="painting"></div>
+            <div class="painting"></div>
+            <div class="painting"></div>
+            <div class="painting"></div>
+            <div class="painting"></div>
+            <div class="painting"></div>
+            <div class="painting"></div>
+            <div class="painting"></div>
+            <div class="painting"></div>
+            <div class="painting"></div>
+            <div class="painting"></div>
+            <div class="painting"></div>
+            <div class="painting"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</body>
+<script type="text/javascript">
+$('document').ready(function() {
+    var lastColor;
+    $('.colors').on('click', function(entry) {
+        lastColor = entry.target.id;
+    })
+    $('.painting').on('click', function() {
+        $(this).css({
+            "background-color": lastColor
+        });
+    });
+
+});
+</script>
+
+</html>
